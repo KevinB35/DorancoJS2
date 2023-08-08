@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faCheck } from "@fortawesome/free-solid-svg-icons";
 
 const TP = () => {
   const [todos, setTodos] = useState([]);
@@ -44,11 +46,9 @@ const TP = () => {
   };
 
   const inputStyle = {
-    display: "block",
-    width: "80%",
     margin: "0 auto 10px",
     backgroundColor: "#ecf0f1",
-    //color: "black",
+    color: "black",
     textAlign: "center",
     border: "none",
     padding: 10,
@@ -78,22 +78,24 @@ const TP = () => {
                 {todo.task}
               </span>
               <button onClick={() => handleDelete(todo.id)} style={btnStyle}>
-                Supprimer
+                <FontAwesomeIcon icon={faTrash} style={{ color: "black" }} />
               </button>
             </div>
           ))}
-        <input
-          style={inputStyle}
-          type='text'
-          value={current}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") handleSubmit();
-          }}
-          onChange={(e) => setCurrent(e.target.value)}
-        />
-        <button onClick={handleSubmit} style={btnStyle}>
-          Ajouter
-        </button>
+        <div>
+          <input
+            style={inputStyle}
+            type='text'
+            value={current}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") handleSubmit();
+            }}
+            onChange={(e) => setCurrent(e.target.value)}
+          />
+          <button onClick={handleSubmit} style={btnStyle}>
+            <FontAwesomeIcon icon={faCheck} />
+          </button>
+        </div>
       </div>
     </div>
   );
