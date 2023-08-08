@@ -68,7 +68,8 @@ const TP = () => {
                 style={{
                   cursor: "pointer",
                   textDecoration: todo.ongoing ? "" : "line-through",
-                  color: "white",
+                  color: todo.ongoing ? "white" : "grey",
+                  transition: "all 200ms linear",
                 }}
                 onClick={() => {
                   handleSetOngoing(todo);
