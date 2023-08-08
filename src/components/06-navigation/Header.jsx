@@ -39,8 +39,11 @@ const Header = () => {
         <a style={{ ...liStyle, borderRight: "1px solid black" }} href='/form'>
           Form
         </a>
-        <a style={liStyle} href='/tp'>
+        <a style={{ ...liStyle, borderRight: "1px solid black" }} href='/tp'>
           TP
+        </a>
+        <a style={liStyle} href='/article/1'>
+          Article
         </a>
       </nav>
     </div>

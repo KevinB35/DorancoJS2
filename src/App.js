@@ -5,13 +5,9 @@ import Parent from "./components/02-props/parent";
 import Counter from "./components/03-counter/Counter";
 import Form from "./components/04-form/Form";
 import TP from "./components/05-tp/TP";
+import Article from "./components/06-navigation/Article";
 import Header from "./components/06-navigation/Header";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Link,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
   const router = createBrowserRouter([
@@ -42,6 +38,10 @@ function App() {
     {
       path: "/tp",
       element: <TP />,
+    },
+    {
+      path: "/article/:id?",
+      element: <Article />,
     },
   ]);
 
