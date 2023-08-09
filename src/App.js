@@ -7,48 +7,25 @@ import Form from "./components/04-form/Form";
 import TP from "./components/05-tp/TP";
 import Article from "./components/06-navigation/Article";
 import Header from "./components/06-navigation/Header";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import ParentClasse from "./components/07-class/parent";
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <h1>Accueil</h1>,
-    },
-    {
-      path: "/jsx",
-      element: <Exemple />,
-    },
-    {
-      path: "/state",
-      element: <State />,
-    },
-    {
-      path: "/props",
-      element: <Parent />,
-    },
-    {
-      path: "/counter",
-      element: <Counter />,
-    },
-    {
-      path: "/form",
-      element: <Form />,
-    },
-    {
-      path: "/tp",
-      element: <TP />,
-    },
-    {
-      path: "/article/:id?",
-      element: <Article />,
-    },
-  ]);
-
   return (
     <>
-      <Header />
-      <RouterProvider router={router} />
+      {/*<Header />*/}
+      <Routes>
+        <Route path='/' element={<Header />}>
+          <Route path='/jsx' element={<Exemple />} />
+          <Route path='/state' element={<State />} />
+          <Route path='/props' element={<Parent />} />
+          <Route path='/counter' element={<Counter />} />
+          <Route path='/form' element={<Form />} />
+          <Route path='/tp' element={<TP />} />
+          <Route path='/article/:id?' element={<Article />} />
+          <Route path='/class' element={<ParentClasse />} />
+        </Route>
+      </Routes>
     </>
   );
 }

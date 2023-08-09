@@ -1,10 +1,15 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 
 const Article = () => {
   const { id = 1 } = useParams();
+  const { state } = useLocation();
 
-  return <h1>Page article {id}</h1>;
+  return (
+    <h1>
+      {state ? state.title : "Pas de titre passé en parametre"} {id}
+    </h1>
+  );
 };
 
 export default Article;
